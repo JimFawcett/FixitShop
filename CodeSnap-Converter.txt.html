@@ -1,0 +1,72 @@
+﻿<!----------------------------------------------------------------------------
+  CodeSnap-Converter.h.htm
+  Published 19 Mar 2017
+  Jim Fawcett, CSE687 : Object Oriented Design, Summer 2017
+
+  Note:
+  - Markup characters in the text part, enclosed in <pre>...</pre> have to be
+    replaced with escape sequences, e.g., < becomes &lt; and > becomes &gt;
+  - Be careful that you don't replace genuine markup characters with escape
+    sequences, e.g., everything outside of the <pre>...</pre> section.
+----------------------------------------------------------------------------->
+  <html>
+  <head>
+    <script src="js/ScriptsUtilities.js"></script>
+    <script src="js/ScriptsTemplate.js"></script>
+    <script src="js/ScriptsKeyboard.js"></script>
+    <script src="js/ScriptsMenuCpp.js"></script>
+    <link rel="stylesheet" href="css/StylesTemplate.css" />
+    <link rel="stylesheet" href="css/StylesMenu.css" />
+    <style>
+      h3 {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body id="github" onload="initializeMenu()">
+    <nav>
+      <div id="navbar"></div>
+    </nav>
+    <a id="Next" href="CodeSnap-Converter.h.html">N</a>
+    <a id="Prev" href="CodeSnap-Converter.cpp.html">P</a>
+
+    <navKeys-Container>
+      <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+      <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+      <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+      <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+      <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+      <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+      <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+    </navKeys-Container>
+
+    <h3>
+      <a href="CodeSnap-Converter.h.html">Converter.h</a>,
+      <a href="CodeSnap-Converter.cpp.html">Converter.cpp</a>,
+      <a href="CodeSnap-Converter.txt.html">Converter.txt</a>,
+      <a href="https://github.com/JimFawcett/CppUtilities">Code Folder</a>
+    </h3>
+    <div class="indent">
+      Illustrates a useful conversion utilitiy.
+    </div>
+    <hr />
+    <h3>CodeUtilities.txt</h3>
+
+    <pre class="codeSnap">
+  test std::string Converter&lt;T&gt;::toString(T)
+ --------------------------------------------
+  Converting from values to strings: 3.14159, 73, a_test_string plus more
+
+  test T Converter&lt;T&gt;::toValue(std::string)
+ -------------------------------------------
+  Converting from strings to values: 3.14159, 73, a_test_string
+
+Press any key to continue . . .
+
+</pre>
+    <!--<div class="photo">
+    <img src="pictures/CSTstrip.jpg" width="100%" />
+  </div>-->
+    <info-bar></info-bar>
+  </body>
+  </html>

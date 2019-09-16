@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <!--
+   - Repositories.html - Summaries of Repositories
+   - ver 1.0 - 10 June 2019
+   - Jim Fawcett, Emeritus Teaching Professor, Syracuse University
+  -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="Software Projects. Code Samples. Software Links" />
+  <meta name="keywords" content="Repository, Design, Code" />
+  <meta name="Author" content="Jim Fawcett" />
+  <meta name="Author" content="James Fawcett" />
+  <title>Sockets</title>
+  <script src="js/ScriptsUtilities.js"></script>
+  <script src="js/ScriptsTemplate.js"></script>
+  <script src="js/ScriptsKeyboard.js"></script>
+  <script src="js/ScriptsMenuRepo.js"></script>
+  <script src="js/ScriptsSizerComp.js"></script>
+  <link rel="stylesheet" href="css/StylesTemplate.css" />
+  <link rel="stylesheet" href="css/StylesMenu.css" />
+  <link rel="stylesheet" href="css/StylesSizerComp.css" />
+  <style>
+    summary {
+      padding: 3px 0px 5px 0px;
+    }
+  </style>
+</head>
+<body id="github" onload="initializeMenu()">
+
+  <navKeys-Container>
+    <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+    <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+    <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+    <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+    <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+    <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+    <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+  </navKeys-Container>
+
+  <nav>
+    <div id="navbar"></div>
+  </nav>
+  <a id="Next" href="XmlDocument.html">N</a>
+  <a id="Prev" href="FileSystem.html">P</a>
+
+  <header>
+    <a class="repoLink" href="https://github.com/JimFawcett/Sockets-Windows">Sockets-Windows code</a>
+    <hgroup id="pagetitle">
+      <h1 id="title">Sockets&nbsp;&nbsp;Repository</h1>
+      <h3 id="subtitle">Contains Socket, SocketListener, and SocketConnector classes</h3>
+    </hgroup>
+  </header>
+
+  <!--<indent-block style="width:70%; display:block;">
+    <img class="strip-photo" src="Pictures/TextFinderCodeStrip.JPG" alt="Text Finder Code Strip" width="100%" />
+    <div align="center">TextFinder code fragment</div>
+  </indent-block>-->
+
+  <hr class="spread" />
+  <!--<div>
+    <img class="photo right" src="Pictures/SocketsClassDiagram.JPG" width="600" />
+  </div>-->
+  <h3>Concept:</h3>
+  <div id="fig1"></div>
+  <indent-block>
+    Sockets are an operating system facility for sending streams of bytes through the tcp stack to another
+    process or another machine.  Their behavior is affected by buffers owned by each socket receiver.
+    <spacer-15></spacer-15>
+    If the sender sends N bytes, then:
+    <ul class="tight pad10">
+      <li>
+        if the receiver&apos;s buffer has space for the N bytes, then all are sent.  The send function
+        returns N signalling that all bytes were transfered.
+      </li>
+      <li>
+        if the receiving buffer has M &lt; N bytes available, then M bytes are sent and the send function
+        returns M signalling that N-M bytes were not sent.
+      </li>
+      <li>
+        if the receiving buffer is full, then the sender blocks until some space becomes available in
+        the buffer.
+      </li>
+    </ul>
+    Sockets don&apos;t know about any data structure other than streams of bytes.  So to send a message
+    you must frame its bytes with some additional decoration so the receiver can detect when an entire
+    message has been received.
+    <spacer-15></spacer-15>
+    Also, since both sending and receiving are allowed on the same socket connection, some talk protocol
+    is needed.  Without that, both ends may send, eventually resulting in deadlock.  Similarly, if both
+    receive then buffers on both ends will empty, resulting again in deadlock.
+    <spacer-15></spacer-15>
+    The socket library provided in this repository provides means to simplify handling both problems.
+    See the Resources listed below for ways to fully handle them.
+  </indent-block>
+  <h3>Design:</h3>
+  <div id="fig2"></div>
+  <indent-block>
+    Sockets-Windows provides four classes: Socket, SocketConnecter, SocketListener, and SocketSystem.
+    An instance of Socket is created by the SocketListener when it establishes a connection.  Listener
+    creates a thread, passing it a client handler object and the new socket.  Clients use SocketConnecter
+    to establish a connection with a listener and to communicate with the remote socket.
+    <spacer-10></spacer-10>
+    Each program that uses Sockets must declare an instance of SocketSystem that loads the windows
+    socket library on construction and unloads on destruction.
+  </indent-block>
+  <h3>Resources:</h3>
+  <indent-block>
+    <a href="Resources/Win32Sockets.pdf">Win32Sockets.pdf</a>
+    <div>
+      Discusses how Win32 Sockets operate.
+    </div>
+    <spacer-10></spacer-10>
+    <a href="Resources/CommunicationChannel.pdf">CommunicationChannel.pdf</a>
+    <div>
+      This document describes how sockets are used to build a reliable message-based asynchronous
+      communication channel.
+    </div>
+    <spacer-10></spacer-10>
+    <a href="CppCommWithFileXfer.html">CppCommWithFileXfer</a>
+    <div>
+      This repository holds code that uses these techniques.
+    </div>
+    <spacer-10></spacer-10>
+    <!--<a href="https://github.com/JimFawcett/Sockets-Windows">Sockets-Windows Repository</a>-->
+  </indent-block>
+  <spacer-25 class="clear"></spacer-25>
+  <!--<img class="strip-photo" src="Pictures/CampusAtNight.jpg" alt="campus at night" />-->
+
+  <script>createSizer("Pictures/Sockets.JPG", "Fig 1 - Sockets Model", 500, "fig1")</script>
+  <script>createSizer("Pictures/SocketsClassDiagram.JPG", "Sockets Class Diagram", 500, "fig2")</script>
+  <info-bar></info-bar>
+</body>
+</html>

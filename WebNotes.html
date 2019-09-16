@@ -1,0 +1,260 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <!--
+   - WebNotes.html - Links to main resources
+   - ver 1.0 - 23 August 2019
+   - Jim Fawcett, Emeritus Teaching Professor, Syracuse University
+  -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="Software Projects. Code Samples. Software Links" />
+  <meta name="keywords" content="Repository, Design, Code" />
+  <meta name="Author" content="Jim Fawcett" />
+  <meta name="Author" content="James Fawcett" />
+  <title>Web Notes</title>
+  <script src="js/ScriptsUtilities.js"></script>
+  <script src="js/ScriptsTemplate.js"></script>
+  <script src="js/ScriptsKeyboard.js"></script>
+  <script src="js/ScriptsMenu.js"></script>
+  <link rel="stylesheet" href="css/StylesTemplate.css" />
+  <link rel="stylesheet" href="css/StylesMenu.css" />
+  <style>
+    summary {
+      padding: 3px 0px 5px 0px;
+    }
+
+    #github notes-container {
+      display: grid;
+      grid-template-columns: 0.3fr 1fr 0.3fr;
+      grid-gap: 0px;
+      margin: 10px 10px;
+      /*border:1px solid saddlebrown;*/
+    }
+
+    #github note-link {
+      grid-column: 1;
+      padding: 10px;
+      /*border-left: 1px solid saddlebrown;
+      border-right: 1px solid saddlebrown;
+      border-bottom: 1px solid saddlebrown;*/
+    }
+
+    #github note-text {
+      grid-column: 2;
+      padding: 10px;
+      /*border-right: 1px solid saddlebrown;
+      border-bottom: 1px solid saddlebrown;*/
+    }
+
+    #github note-author {
+      grid-column: 3;
+      padding: 10px;
+      /*border-right: 1px solid saddlebrown;
+      border-bottom: 1px solid saddlebrown;*/
+    }
+
+    #github .headerRow {
+      /*border-top : 1px solid saddlebrown;
+      background-color: saddlebrown;
+      color: cornsilk;*/
+      padding: 5px 20px;
+    }
+  </style>
+</head>
+<body id="github" onload="initializeMenu()">
+
+  <navKeys-Container>
+    <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+    <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+    <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+    <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+    <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+    <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+    <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+  </navKeys-Container>
+
+  <nav>
+    <div id="navbar"></div>
+  </nav>
+  <!--<a id="Next" href="FindFiles.html">N</a>
+  <a id="Prev" href="FileDates.html">P</a>-->
+
+  <header>
+    <div id="pagetitle">
+      <h1 id="title">Web Notes</h1>
+      <h3 id="subtitle">Links to HTML5, JavaScript, CSS, and Web Design blogs</h3>
+    </div>
+  </header>
+
+  <hr class="spread" />
+  <indent-block>
+    <notes-container class="darkItem" style="padding:0px;">
+      <note-link class="darkItem headerRow">
+        Link
+      </note-link>
+      <note-text class="darkItem headerRow">
+        Comments
+      </note-text>
+      <note-author class="darkItem headerRow">
+        Author
+      </note-author>
+      <note-link class="lightItem">
+        <a href="https://www.taniarascia.com/how-to-use-local-storage-with-javascript/">Tutorial on LocalStorage</a>
+      </note-link>
+      <note-text class="lightItem">
+        Clear, simple tutorial on use of LocalStorage.
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        <a href="https://www.taniarascia.com/how-to-connect-to-an-api-with-javascript/">Connect to API with JavaScript</a>
+      </note-link>
+      <note-text class="lightItem">
+        Getting JSON data from a REST API
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        <a href="https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-json-data/">JavaScript Fetch API</a>
+      </note-link>
+      <note-text class="lightItem">
+        Replacement for ajax
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        <a href="http://tutorials.jenkov.com/html5/file-api.html#creating-a-filereader">HTML5 File API</a>
+      </note-link>
+      <note-text class="lightItem">
+        Broad coverage of the new File API
+      </note-text>
+      <note-author class="lightItem">
+        Jenkov.com
+      </note-author>
+      <note-link class="lightItem">
+        <a href="https://www.html5rocks.com/en/tutorials/file/dndfiles/">Reading files in Javascript using File APIs</a>
+      </note-link>
+      <note-text class="lightItem">
+        Relatively simple examples of the two use cases: user selection with &lt;input&gt; and drag-and-drop.
+      </note-text>
+      <note-author class="lightItem">
+        Eric Bidelman
+      </note-author>
+      <note-link class="darkItem headerRow">Topic</note-link>
+      <note-text class="darkItem headerRow">Links</note-text>
+      <note-author class="darkItem headerRow">Author(s)</note-author>
+      <note-link class="lightItem">
+        HTML5
+      </note-link>
+      <note-text class="lightItem">
+        <a href="https://www.taniarascia.com/basic-html5-file/">HTML5 Skeleton File</a>,
+        <a hef="http://tutorials.jenkov.com/html5/index.html">HTML5 Tutorial</a>
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia, Jenkov.com
+      </note-author>
+      <note-link class="lightItem">
+        JavaScript, the Language
+      </note-link>
+      <note-text class="lightItem">
+        <a href="https://www.taniarascia.com/understanding-syntax-and-code-structure-in-javascript/">JavaScript syntax and structure</a>,
+        <a href="https://www.taniarascia.com/how-to-define-functions-in-javascript/">JavaScript functions</a>,
+        <a href="https://www.taniarascia.com/while-do-while-loops-javascript/">JavaScript loops</a>,
+        <a href="https://www.taniarascia.com/how-to-use-the-switch-statement-in-javascript/">JavaScript switch</a>,
+        <a href="https://www.taniarascia.com/how-to-construct-for-loops-in-javascript/">Many faces of for</a>,
+        <a href="https://www.taniarascia.com/how-to-write-conditional-statements-in-javascript/">JavaScript conditional statements</a>,
+        <a href="https://www.taniarascia.com/understanding-objects-in-javascript/">Understanding Objects</a>,
+        <a href="https://www.taniarascia.com/javascript-day-two/">Comparisons, math, and logic</a>,
+        <a href="https://www.taniarascia.com/javascript-day-two/">math with operators</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/how-to-use-object-methods-in-javascript/">Using JavaScript Objects</a>,
+        <a href="https://www.taniarascia.com/understanding-date-and-time-in-javascript/">JavaScript Date and Time</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/understanding-events-in-javascript/">Understanding Events in JavaScript</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/understanding-classes-in-javascript/">JavaScript classes</a>,
+        <a href="https://www.taniarascia.com/es6-syntax-and-feature-overview/">ES6 Syntax and Features</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/simple-jquery-examples-with-code-and-demos/">Simple jQuery examples</a>,
+        <a href="https://www.taniarascia.com/how-to-use-jquery-a-javascript-library/">How to use jQuery</a>,
+        <a href="https://github.com/taniarascia/jquery">jQuery to JavaScript Dictionary</a>
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        JavaScript data structures
+      </note-link>
+      <note-text class="lightItem">
+        <a href="https://www.taniarascia.com/understanding-arrays-in-javascript/">Understanding Arrays</a>,
+        <a href="https://www.taniarascia.com/how-to-use-array-methods-in-javascript-mutator-methods/">Summary of array methods</a>,
+        <a href="https://www.taniarascia.com/how-to-use-array-methods-in-javascript-iteration-methods/">Array iteration Methods</a>,
+        <a href="https://www.taniarascia.com/how-to-use-array-methods-in-javascript-accessor-methods/">Array accessor methods</a>,
+        <a href="https://www.taniarascia.com/real-world-examples-of-map-filter-and-reduce-in-javascript/">Real world examples of map, filter, and reduce</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/how-to-work-with-strings-in-javascript/">JavaScript strings</a>,
+        <a href="https://www.taniarascia.com/how-to-index-split-and-manipulate-strings-in-javascript/">Index, split strings</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/how-to-use-json-data-with-php-or-javascript/">How to use JSON data</a>,
+        <a href="https://www.taniarascia.com/how-to-use-local-storage-with-javascript/">LocalStorage</a>
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        Document Object Model (DOM)
+      </note-link>
+      <note-text class="lightItem">
+        <a href="https://www.taniarascia.com/introduction-to-the-dom/">Introduction to the DOM</a>,
+        <a href="https://www.taniarascia.com/understanding-the-dom-tree-and-nodes/">Understanding DOM Tree and Nodes</a>,
+        <a href="https://www.taniarascia.com/how-to-access-elements-in-the-dom/">Accessing DOM elements</a>,
+        <a href="https://www.taniarascia.com/how-to-traverse-the-dom/">Traverse the DOM</a>,
+        <a href="https://www.taniarascia.com/how-to-make-changes-to-the-dom/">Make Changes to the DOM</a>
+
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        CSS styling
+      </note-link>
+      <note-text class="lightItem">
+        <a href="https://www.taniarascia.com/you-dont-need-a-framework/">Fundamentals of Responsive Design</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/responsive-dropdown-navigation-bar/">Responsive dropdown navigation bar</a>,
+        <a href="https://www.taniarascia.com/off-canvas-navigation/">Hamburger menu and slideouts</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/styling-ui-components-from-scratch-buttons-forms/">Styling UI Components: buttons &amp; forms</a>,
+        <a href="https://www.taniarascia.com/responsive-dropdown-navigation-bar/">Create Flexbox Grid</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/how-to-build-a-responsive-image-gallery-with-flexbox/">Responsive image gallery with Flexbox</a>,
+        <a href="https://www.taniarascia.com/background-position-fixed-and-cover-with-css/">Background position fixed and cover with CSS</a>,
+        <a href="https://www.taniarascia.com/crossfade-between-two-images-with-css-animations/">Crossfade between two images</a>,
+        <a href="https://www.taniarascia.com/full-screen-navigation-overlay/">Full screen navigation overlay</a>
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+      <note-link class="lightItem">
+        Other web links
+      </note-link>
+      <note-text class="lightItem">
+        <a href="https://github.com/taniarascia/guides">Web Development Guides</a>,
+        <a href="https://www.taniarascia.com/node-express-postgresql-heroku/">Deploy to Heroku</a>,
+        <a href="https://www.taniarascia.com/add-comments-to-static-site/">Comments processing for static site</a>
+        <spacer-10></spacer-10>
+        <a href="https://www.taniarascia.com/getting-started-with-git/">Getting Started with git</a>,
+        <a href="https://www.taniarascia.com/https-ssl-tls-certificate-how-to/">TLS/SSL Certificate and HTTPS</a>,
+        <a href="https://www.taniarascia.com/a-practical-guide-to-search-engine-optimization-seo-with-google/">Guide to SEO</a>
+      </note-text>
+      <note-author class="lightItem">
+        Tania Rascia
+      </note-author>
+    </notes-container>
+  </indent-block>
+  <info-bar></info-bar>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <!--
+   - TestPage.htm - Code Artist Thoughts
+   - ver 1.0 - 10 June 2019
+   - Jim Fawcett, Syracuse University
+  -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="Software Projects. Code Samples. Software Links" />
+  <meta name="keywords" content="Repository, Design, Code" />
+  <meta name="Author" content="Jim Fawcett" />
+  <meta name="Author" content="James Fawcett" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Design Course</title>
+  <script src="js/ScriptsUtilities.js"></script>
+  <script src="js/ScriptsTemplate.js"></script>
+  <script src="js/ScriptsKeyboard.js"></script>
+  <script src="js/ScriptsMenuDesignCourse.js"></script>
+  <link rel="stylesheet" href="css/StylesTemplate.css" />
+  <link rel="stylesheet" href="css/StylesMenu.css" />
+  <style>
+    summary {
+      padding: 3px 0px 5px 0px;
+    }
+  </style>
+</head>
+<body id="github" onload="initializeMenu()">
+
+  <navKeys-Container>
+    <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+    <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+    <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+    <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+    <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+    <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+    <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+  </navKeys-Container>
+
+  <nav>
+    <div id="navbar"></div>
+  </nav>
+  <!--<a id="Next" href="BlogDesign.htm">N</a>
+  <a id="Prev" href="BlogFileSystem.htm">P</a>-->
+
+  <header>
+    <div id="pagetitle">
+      <h1 id="title">Design Course</h1>
+    </div>
+  </header>
+
+  <!-- page content -->
+  <!--<img class="strip-photo" src="students/studentstrip3.jpg" alt="Software Studio Project Team" />
+  <spacer-15></spacer-15>-->
+
+  <div style="padding-left:25px;">
+    "Start where you are, use what you have, do what you can."
+    <br />
+    - Arthur Ashe
+  </div>
+
+  <hr class="spread" />
+  <spacer-25></spacer-25>
+  <indent-block>
+    One of the purposes of this site is to provide code that illustrates some design idea
+    or technique for a design book that I plan to write.  The book will contain code fragments
+    to illustrate an idea, deferring to this set of repositories for the full implementation.
+    <spacer-15></spacer-15>
+    You can see my initial plan for the book from the Design Course dropdown.
+  </indent-block>
+  <!--<img class="strip-photo" src="Pictures/CampusAtNight.jpg" alt="campus at night" />-->
+
+  <spacer-25 class="clear"></spacer-25>
+  <info-bar></info-bar>
+</body>
+</html>

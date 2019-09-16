@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <!--
+   - ToDo.htm - Tasks for this site
+   - ver 1.0 - 23 June 2019
+   - Jim Fawcett, Syracuse University
+  -->
+  <title>ToDo</title>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="Software Projects. Code Samples. Software Links" />
+  <meta name="keywords" content="Repository, Design, Code" />
+  <meta name="Author" content="Jim Fawcett" />
+  <meta name="Author" content="James Fawcett" />
+  <meta name="Author" content="JimFawcett" />
+  <script src="js/ScriptsUtilities.js"></script>
+  <script src="js/ScriptsTemplate.js"></script>
+  <script src="js/ScriptsKeyboard.js"></script>
+  <script src="js/ScriptsMenu.js"></script>
+  <link rel="stylesheet" href="css/StylesTemplate.css" />
+  <link rel="stylesheet" href="css/StylesMenu.css" />
+  <style>
+    summary {
+      padding: 3px 0px 5px 0px;
+    }
+
+    .border {
+      border: 1px solid black;
+    }
+
+    .fill {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden
+    }
+
+      .fill img {
+        flex-shrink: 0;
+        /*min-width: 100%;
+      min-height: 100%*/
+      }
+
+      .fill div {
+        flex-shrink: 0;
+        /*min-width: 100%;
+      min-height: 100%*/
+      }
+
+    .pad-left {
+      padding-left: 15px;
+    }
+
+    .pad-right {
+      padding-right: 15px;
+    }
+
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+<body id="github" onload="initializeMenu()">
+
+  <navKeys-Container>
+    <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+    <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+    <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+    <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+    <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+    <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+    <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+  </navKeys-Container>
+
+  <nav>
+    <div id="navbar"></div>
+  </nav>
+  <!--<a id="Next" href="BlogDesign.htm">N</a>
+  <a id="Prev" href="BlogFileSystem.htm">P</a>-->
+
+  <header>
+    <hgroup id="pagetitle">
+      <h1 id="title">ToDo - Site and Repositories</h1>
+    </hgroup>
+  </header>
+
+  <!--<indent-block style="width:70%; display:block;">
+    <img class="strip-photo" src="Pictures/TextFinderCodeStrip.JPG" alt="Text Finder Code Strip" width="100%" />
+    <div align="center">TextFinder code fragment</div>
+  </indent-block>-->
+
+  <hr class="spread" />
+  <indent-block>
+    <spacer-10></spacer-10>
+    <h3>Website:</h3>
+    <ul class="tight">
+      <li><del>&nbsp;Add next and prev links for all connected pages, e.g., notes, blogs, repos&nbsp;</del></li>
+      <li>
+        Revise <a href="LangCpp.html">LangCpp.html</a> to provide a clear path for learning C++ basics
+        and more advanced features.
+      </li>
+      <li>
+        Revise styling for <a href="templates.html">templates.html</a>.
+      </li>
+      <li>
+        <div class="fill right pad-left pad-right">
+          <img class="photo" style="background-color:#eee;" src="Pictures/TextFinderPackageDiagram.png" alt="missing img" width="400" />
+        </div>
+        <div class="fill clear right" style="padding-left:46px; height:1.75em;">
+          <div class="border;" style="text-align:center; width:400px;">TextFinder Packages</div>
+        </div>
+        Image CSS hack in RepoPageTemplate.html and other Repository pages:  Cleanup CSS.
+        The image on the right uses the &quot;hacked&quot; styling.  It&apos;s here to serve
+        as a testbed for that fixing.
+      </li>
+      <li>
+        SiteMap:
+        <ul class="tight">
+          <li><del>&nbsp;&nbsp;Add condensed repository table&nbsp;&nbsp;</del></li>
+          <li><del>&nbsp;&nbsp;Add personal page&nbsp;&nbsp;</del></li>
+        </ul>
+      </li>
+      <li>
+        Repository Pages:
+        <ul class="tight">
+          <li><del>&nbsp;Add missing pages for new repositories&nbsp;</del></li>
+          <li>Add design detail and UML diagrams to existing repo pages</li>
+          <li>Add more status details</li>
+          <li>Add Build page or pages</li>
+          <li>
+            Migrate documentation pages to <a href="RepoPageTemplate.html">RepoPageTemplate.html</a>
+            format
+          </li>
+        </ul>
+      </li>
+      <li>
+        Repository Code:
+        <ul class="tight">
+          <li><del>&nbsp;TextFinder: add ProcessCmdLine from CodeUtilities&nbsp;</del></li>
+          <li><del>&nbsp;Add option to write output to file in ProcessCmdLine&nbsp;</del></li>
+          <li>Update ProcessCmdLine in FileFinder</li>
+          <li>Major overhaul of UI for Duplicates - start with new ProcessCmdLine</li>
+          <li>Update Property to use template template parameter, as done in SingletonLogger</li>
+          <li>Add queued logger option which uses single threaded apartment</li>
+          <li>PrettyPrint: add write to file</li>
+          <li>CodeAnalyzer: simplify and port dependency analysis from CsDependencyAnalysis</li>
+          <li>MsgPassingComm: make messages compatible with HTTP</li>
+        </ul>
+      </li>
+      <li>
+        Webpage Components:
+        <indent-block>
+          Standard webcomponents (championed by Google and sanctified by W3C) appear to be
+          an effective way to build components, e.g., reuseable parts, for web pages.
+          Angular, Vue, and React have also developed interesting component technologies.
+          <spacer-10></spacer-10>
+          I plan to use webcomponents for resize-able images and perhaps an alternative to
+          standard html &lt;details&gt; with slightly different behavior.
+        </indent-block>
+      </li>
+      <li>
+        Resources:
+        <ul class="tight">
+          <li>Fix broken links in notes and blogs</li>
+          <li>Add and fix details in the notes pages</li>
+        </ul>
+      </li>
+    </ul>
+    <h3>Repositories:</h3>
+    <ul class="tight">
+      <li><del>&nbsp;Add Threads, DirExplorers, Properties, ...&nbsp;</del></li>
+      <li>make test stubs more user friendly</li>
+      <li>add regression tests to the bigger repos</li>
+    </ul>
+    <spacer-15></spacer-15>
+  </indent-block>
+  <!--<img class="strip-photo" src="Pictures/CampusAtNight.jpg" alt="campus at night" />-->
+
+  <info-bar></info-bar>
+</body>
+</html>

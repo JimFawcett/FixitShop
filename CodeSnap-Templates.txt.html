@@ -1,0 +1,93 @@
+﻿<!----------------------------------------------------------------------------
+  CodeSnap-Templates.htm
+  Published 18 May 2017
+  Jim Fawcett, CSE687 : Object Oriented Design, Summer 2017
+
+  Note:
+  - Markup characters in the text part, enclosed in <pre>...</pre> have to be
+    replaced with escape sequences, e.g., < becomes &lt; and > becomes &gt;
+  - Be careful that you don't replace genuine markup characters with escape
+    sequences, e.g., everything outside of the <pre>...</pre> section.
+----------------------------------------------------------------------------->
+  <html>
+  <head>
+    <script src="js/ScriptsUtilities.js"></script>
+    <script src="js/ScriptsTemplate.js"></script>
+    <script src="js/ScriptsKeyboard.js"></script>
+    <script src="js/ScriptsMenuCpp.js"></script>
+    <link rel="stylesheet" href="css/StylesTemplate.css" />
+    <link rel="stylesheet" href="css/StylesMenu.css" />
+    <style>
+      h3 {
+        font-weight: normal;
+      }
+    </style>
+  </head>
+  <body id="github" onload="initializeMenu()">
+    <nav>
+      <div id="navbar"></div>
+    </nav>
+    <a id="Next" href="CodeSnap-Templates.h.html">N</a>
+    <a id="Prev" href="CodeSnap-Templates.cpp.html">P</a>
+
+    <navKeys-Container>
+      <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+      <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+      <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+      <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+      <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+      <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+      <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+    </navKeys-Container>
+
+    <h3>
+      <a href="CodeSnap-Templates.h.html">Stack.h</a>,
+      <a href="CodeSnap-Templates.cpp.html">Stack.cpp</a>,
+      <a href="CodeSnap-Templates.txt.html">Stack.txt</a>,
+      <a class="disable" href="#">Code folder</a>,
+      <a href="Templates.html">Templates webpage</a>
+    </h3>
+    <div class="indent">
+      This code illustrates syntax used for template classes.
+    </div>
+    <hr />
+    <h3>Templates.txt</h3>
+<pre class="codeSnap">
+  Testing Template Based Stack Class
+  
+  pushing stack:          1
+  pushing stack:          2
+  pushing stack:          3
+  stack size = 3
+  popping stack:          3
+  popping stack:          2
+  popping stack:          1
+  stack size = 0
+  
+  popping double copy of int stack:
+  popping stack:          1
+  popping stack:          2
+  popping stack:          3
+  pushing stack:       -1.5
+  pushing stack:        0.5
+  pushing stack:        2.5
+  popping stack:        2.5
+  popping stack:        0.5
+  popping stack:       -1.5
+  
+  popping int copy of double stack:
+  popping stack:         -1
+  popping stack:          0
+  popping stack:          2
+  
+  attempt to pop empty stack
+
+Press any key to continue . . .
+
+</pre>
+    <!--<div class="photo">
+    <img src="pictures/CSTstrip.jpg" width="100%" />
+  </div>-->
+    <info-bar></info-bar>
+  </body>
+  </html>

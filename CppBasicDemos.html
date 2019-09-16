@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <!--
+   - Repositories.html - Summaries of Repositories
+   - ver 1.0 - 10 June 2019
+   - Jim Fawcett, Emeritus Teaching Professor, Syracuse University
+  -->
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <meta name="description" content="Software Projects. Code Samples. Software Links" />
+  <meta name="keywords" content="Repository, Design, Code" />
+  <meta name="Author" content="Jim Fawcett" />
+  <meta name="Author" content="James Fawcett" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>CppBasicDemos</title>
+  <script src="js/ScriptsUtilities.js"></script>
+  <script src="js/ScriptsTemplate.js"></script>
+  <script src="js/ScriptsKeyboard.js"></script>
+  <script src="js/ScriptsMenuRepo.js"></script>
+  <script src="js/ScriptsSizerComp.js"></script>
+  <link rel="stylesheet" href="css/StylesTemplate.css" />
+  <link rel="stylesheet" href="css/StylesMenu.css" />
+  <link rel="stylesheet" href="css/StylesSizerComp.css" />
+  <style>
+    summary {
+      padding: 3px 0px 5px 0px;
+    }
+
+    ul.tight > li {
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body id="github" onload="initializeMenu()">
+
+  <navKeys-Container>
+    <nav-Key id="sKey" onclick="toggleSwipeEvents()">S</nav-Key>
+    <nav-Key id="rKey" onclick="location.reload()">R</nav-Key>
+    <nav-Key id="tKey" onclick="scrollPageTop()">T</nav-Key>
+    <nav-Key id="bKey" onclick="scrollPageBottom()">B</nav-Key>
+    <nav-Key id="hKey" onclick="helpWin()">H</nav-Key>
+    <nav-Key id="pKey" onclick="loadPrev()">P</nav-Key>
+    <nav-Key id="nKey" onclick="loadNext()">N</nav-Key>
+  </navKeys-Container>
+
+  <nav>
+    <div id="navbar"></div>
+  </nav>
+  <a id="Next" href="STR.html">N</a>
+  <a id="Prev" href="CppHttpClientServer.html">P</a>
+
+  <header>
+    <a class="repoLink" href="https://github.com/JimFawcett/CppBasicDemos">CppBasicDemos code</a>
+    <hgroup id="pagetitle">
+      <h1 id="title">CppBasicDemos&nbsp;&nbsp;Repository</h1>
+      <h3 id="subtitle">A good source for practice code</h3>
+    </hgroup>
+  </header>
+
+  <!--<indent-block style="width:70%; display:block;">
+    <img class="strip-photo" src="Pictures/TextFinderCodeStrip.JPG" alt="Text Finder Code Strip" width="100%" />
+    <div align="center">TextFinder code fragment</div>
+  </indent-block>-->
+
+  <hr class="spread" />
+  <indent-block>
+    <h3>Contents:</h3>
+    <indent-block>
+      Basic demos for C++ syntax:
+      <ul class="tight pad10">
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>PointersAndReferencesDemo</span></a><br />
+          Basic syntax and use of pointers and C++ references.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>LambdaCapture</span></a><br />
+          Lambdas are a short-cut syntax for creating functors.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>CallableObjects-SimpleDemo</span></a><br />
+          Callable objects are any C++ construct with invocation syntax, e.g., function, function pointer,
+          functor, and lambda.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>StorageSizes</span></a><br />
+          Evalulates sizes of the C++ fundamental types in CppBasicDemos &gt; TypeTests &gt; StorageSizes
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>CastTests</span></a><br />
+          Demonstrates each of the modern cast types in CppBasicDemos &gt; TypeTests &gt; CastTests
+        </li>
+      </ul>
+      Basic Demos for C++ classes:
+      <ul class="tight pad10">
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>Equiv</span></a><br />
+          Construction syntax that is context dependent and may be confusing for those new to C++
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>ClassLayout</span></a><br />
+          Class Layout in memory - illustrates that inheritance and composition create nested instances.
+          <details>
+            <summary>Instance Layout</summary>
+            <div id="fig1"></div>
+            <!--<img class="photo" src="Pictures/ObjectRelationships.JPG" width="600" />-->
+          </details>
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>DemComp</span></a><br />
+          Illustrates basic composition syntax and use of constructor initializers.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>DemInherit</span></a><br />
+          Inheritance demos illustrate the importance of specifying base and component initialization
+          using constructor initializer sequences.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>DemInit</span></a><br />
+          Initialization syntax demos.
+        </li>
+      </ul>
+      Basic Demos for C++ libraries:
+      <ul class="tight pad10">
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>iostreams</span></a><br />
+          std::iostreams - console, files, filebuf, and stringstream demos.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/STL-Containers"><span>STL containers</span></a><br />
+          Simple operations for each of the STL containers.
+        </li>
+        <li>
+          <a href="https://github.com/JimFawcett/CppBasicDemos"><span>TreeWalk</span></a><br />
+          TreeWalk - demonstrate tree walks with recursion, stacks, and queues.
+        </li>
+      </ul>
+    </indent-block>
+    <spacer-15></spacer-15>
+    <h3>Build:</h3>
+    <indent-block>
+      This C++ code was built with Visual Studio Community Edition - 2019 and tested on Windows 10.
+    </indent-block>
+    <spacer-25></spacer-25>
+    <!--<img class="strip-photo" src="Pictures/CampusAtNight.jpg" alt="campus at night" />-->
+
+    <script>createSizer("Pictures/ObjectRelationships.JPG", "Instance Layout in Memory", 500, "fig1")</script>
+    <info-bar onclick="location.reload()"></info-bar>
+</body>
+</html>
